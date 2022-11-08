@@ -1,0 +1,14 @@
+/* This is for global styles! loaded in site/_includes/default.html */
+
+:root {
+  --primary-color: #ff0000;
+  --on-primary-color: white;
+}
+
+body {
+  padding: 0;
+}
+
+[dsd-pending] {
+  display: none;
+}

@@ -1,0 +1,23 @@
+<!-- This is using the _includes/default.html template -->
+{% extends 'default.html' %}
+
+{% block head %}
+  <script type="module" src="/js/pages/home-page.js"></script>
+  <link rel="stylesheet" href="/css/home-page.css">
+{% endblock %}
+
+{% block content %}
+  <h1>Home</h1>
+  <p>Home page content</p>
+  <p>
+    The red border means the component is not hydrated. Hover it so it can hydrate
+  </p>
+  <lit-island on:interaction="pointerenter" import="/js/components/my-counter.js">
+    <my-counter></my-counter>
+  </lit-island>
+
+  <not-ssrd-component></not-ssrd-component>
+
+  <a href="/about">About</a>
+
+{% endblock %}

@@ -1,0 +1,8 @@
+<!-- this is an example layout -->
+{% extends 'default.html' %}
+
+{% block head %}
+  <script type="module" src="/js/pages/about.js"></script>
+{% endblock %}
+
+{% block content %}{{ content | safe }}{% endblock %}

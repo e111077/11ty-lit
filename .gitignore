@@ -1,0 +1,7 @@
+_dev
+_prod
+node_modules
+.wireit
+/lib
+/build
+*.tsbuildinfo

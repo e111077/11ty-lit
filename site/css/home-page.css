@@ -1,0 +1,5 @@
+/* loaded in site/index.html */
+
+:not(:defined) {
+  border: 1px solid red;
+}

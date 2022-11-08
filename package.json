@@ -1,0 +1,131 @@
+{
+  "name": "11ty-lit",
+  "version": "1.0.0",
+  "description": "An example 11ty repo using Lit",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build:prod && npm run serve & npm run build:prod --watch",
+    "dev": "npm run build:dev && npm run serve:dev & npm run build:dev --watch",
+    "serve": "wds --watch --root-dir _prod",
+    "serve:dev": "wds --watch --root-dir _dev --open",
+    "build:dev": "wireit",
+    "build:dev:eleventy": "wireit",
+    "build:dev:ts": "wireit",
+    "build:type-check": "wireit",
+    "build:prod": "wireit",
+    "build:prod:eleventy": "wireit",
+    "build:prod:ts": "wireit"
+  },
+  "wireit": {
+    "build:dev": {
+      "dependencies": [
+        "build:dev:eleventy",
+        "build:dev:ts",
+        "build:type-check"
+      ]
+    },
+    "build:dev:eleventy": {
+      "command": "NODE_ENV=DEV eleventy --config=eleventy.cjs",
+      "files": [
+        "site/**/*",
+        "lib/**/*",
+        "eleventy.cjs"
+      ],
+      "output": [
+        "_dev"
+      ],
+      "dependencies": [
+        "build:dev:ts"
+      ]
+    },
+    "build:dev:ts": {
+      "command": "NODE_ENV=DEV node esbuild.config.mjs",
+      "files": [
+        "src/**/*",
+        "tsconfig.json",
+        "esbuild.config.mjs"
+      ],
+      "output": [
+        "lib/**/*"
+      ]
+    },
+    "build:type-check": {
+      "command": "tsc -p tsconfig.json --pretty --incremental",
+      "files": [
+        "components/**/*",
+        "tsconfig.json"
+      ],
+      "clean": "if-file-deleted",
+      "output": [
+        "tsconfig.tsbuildinfo"
+      ]
+    },
+    "build:prod": {
+      "dependencies": [
+        "build:prod:eleventy",
+        "build:prod:ts"
+      ]
+    },
+    "build:prod:eleventy": {
+      "command": "NODE_ENV=PROD eleventy --config=eleventy.cjs",
+      "files": [
+        "site/**/*",
+        "build/**/*",
+        "eleventy.cjs"
+      ],
+      "output": [
+        "_prod"
+      ],
+      "dependencies": [
+        "build:prod:ts"
+      ]
+    },
+    "build:prod:ts": {
+      "command": "NODE_ENV=PROD node esbuild.config.mjs",
+      "files": [
+        "src/**/*",
+        "tsconfig.json",
+        "esbuild.config.mjs"
+      ],
+      "output": [
+        "build/**/*"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/e111077/11ty-lit.git"
+  },
+  "keywords": [
+    "11ty",
+    "eleventy",
+    "lit",
+    "lit-element",
+    "SSR"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/e111077/11ty-lit/issues"
+  },
+  "homepage": "https://github.com/e111077/11ty-lit#readme",
+  "dependencies": {
+    "@11ty/is-land": "^2.0.3",
+    "@material/mwc-button": "^0.27.0",
+    "lit": "^2.4.1"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.2",
+    "@lit-labs/eleventy-plugin-lit": "^0.2.3",
+    "@luncheon/esbuild-plugin-gzip": "^0.1.0",
+    "@web/dev-server": "^0.1.35",
+    "@webcomponents/template-shadowroot": "^0.1.0",
+    "clean-css": "^5.3.1",
+    "esbuild": "^0.15.13",
+    "esbuild-plugin-minify-html-literals": "^1.0.1",
+    "html-minifier": "^4.0.0",
+    "tiny-glob": "^0.2.9",
+    "typescript": "^4.8.4",
+    "wireit": "^0.7.2"
+  }
+}
