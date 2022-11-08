@@ -6,7 +6,7 @@ This repo is an example of using 11ty and Lit together.
 
 - lit
 - 11ty
-- [11ty-islands](https://github.com/11ty/is-land) (renamed `<lit-island>` issue https://github.com/11ty/is-land/issues/13)
+- [11ty-islands](https://github.com/11ty/is-land) (renamed `<lit-island>` issue [filed here](https://github.com/11ty/is-land/issues/13))
 - lit-ssr
 - lit-11ty-plugin
 - [wireit](https://github.com/google/wireit)
