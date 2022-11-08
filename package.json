@@ -52,7 +52,7 @@
     "build:type-check": {
       "command": "tsc -p tsconfig.json --pretty --incremental",
       "files": [
-        "components/**/*",
+        "src/**/*",
         "tsconfig.json"
       ],
       "clean": "if-file-deleted",
