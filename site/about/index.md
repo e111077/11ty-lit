@@ -2,9 +2,9 @@
 
 This page uses the layout in `site/about/about.json`.
 
-<lit-island on:interaction="pointerenter" import="/js/components/my-counter.js">
+<is-land on:interaction="pointerenter" import="/js/components/my-counter.js">
   <my-counter></my-counter>
-</lit-island>
+</is-land>
 
 <not-ssrd-component></not-ssrd-component>
 

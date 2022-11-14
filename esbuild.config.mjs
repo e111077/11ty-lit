@@ -9,7 +9,7 @@ const jsFolder = DEV ? 'lib' : 'build';
 
 // can use glob syntax. this will create a bundle for those specific files.
 // you want to add SSR'd files here so that you can hydrate them later with
-// <lit-island import="js/components/element-definition.js"></lit-island>
+// <is-land import="js/components/element-definition.js"></is-land>
 const tsEntrypoints = [
   './src/components/my-counter.ts',
   // also include a bundle for each individual page
