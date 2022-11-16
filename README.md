@@ -9,7 +9,7 @@ This repo is an example of using 11ty and Lit together.
 - [11ty-islands](https://github.com/11ty/is-land)
 - [@lit-labs/ssr](https://github.com/lit/lit/tree/main/packages/labs/ssr)
 - [@lit-labs/eleventy-plugin-lit](https://github.com/lit/lit/tree/main/packages/labs/eleventy-plugin-lit)
-- [Wireit](https://github.com/google/wireit) (experimental services release `0.7.3-pre.5`)
+- [Wireit](https://github.com/google/wireit)
 
 ## Quickstart
 
