@@ -78,6 +78,7 @@ const ssrBuild = esbuild
   ...config,
   format: 'iife',
   splitting: false,
+  conditions: ['node'],
   entryPoints: ['src/ssr.ts'],
 })
 .catch(() => process.exit(1));

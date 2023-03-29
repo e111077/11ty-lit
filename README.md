@@ -72,3 +72,7 @@ This creates your bundles. It uses esbuild to bundle your components and your pa
 #### `eleventy.cjs` file
 
 This is the configuration file for 11ty. Please consult the docs.
+
+#### `eleventy-helpers` directory
+
+This directory includes some files that modularize and organize the 11ty config file so that it does not become a giant mess of a file.
