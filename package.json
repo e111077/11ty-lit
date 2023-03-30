@@ -131,7 +131,7 @@
   "homepage": "https://github.com/e111077/11ty-lit#readme",
   "dependencies": {
     "@11ty/is-land": "^3.0.0",
-    "@material/mwc-button": "^0.27.0",
+    "@material/web": "^1.0.0-pre.5",
     "lit": "^2.7.0"
   },
   "devDependencies": {
