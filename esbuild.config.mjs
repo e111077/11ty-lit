@@ -11,7 +11,8 @@ const jsFolder = DEV ? 'lib' : 'build';
 // you want to add SSR'd files here so that you can hydrate them later with
 // <is-land import="js/components/element-definition.js"></is-land>
 const tsEntrypoints = [
-  './src/components/my-counter.ts',
+  // entrypoints for hydrating lit-islands
+  './src/hydration-entrypoints/**/*.ts',
   // also include a bundle for each individual page
   './src/pages/*.ts',
   // SSR stuff
@@ -78,7 +79,8 @@ const ssrBuild = esbuild
   ...config,
   format: 'iife',
   splitting: false,
-  conditions: ['node'],
+  treeShaking: false,
+  platform: 'node',
   entryPoints: ['src/ssr.ts'],
 })
 .catch(() => process.exit(1));
