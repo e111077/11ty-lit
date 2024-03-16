@@ -80,7 +80,7 @@ const ssrBuild = esbuild
   format: 'iife',
   splitting: false,
   treeShaking: false,
-  conditions: ['node'],
+  platform: 'node',
   entryPoints: ['src/ssr.ts'],
 })
 .catch(() => process.exit(1));

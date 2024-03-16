@@ -1,13 +1,17 @@
 import { html, LitElement, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import '@material/web/button/filled-button.js';
 
 @customElement('my-counter')
 export class MyCounter extends LitElement {
-  @property({type: Number}) count = 0;
+  @property({ type: Number }) count = 0;
 
   render() {
+
     return html`
-      <button @click=${() => this.count++}>Increment</button>
+      <md-filled-button @click=${() => this.count++}
+        >Increment</md-filled-button
+      >
       <div>Count: ${this.count}</div>
     `;
   }
@@ -15,11 +19,8 @@ export class MyCounter extends LitElement {
   static styles = css`
     :host {
       display: block;
-    }
-
-    button {
-      background-color: var(--primary-color);
-      color: var(--on-primary-color);
+      --md-sys-color-primary: var(--primary-color);
+      --md-sys-color-on-primary: var(--on-primary-color);
     }
   `;
 }
