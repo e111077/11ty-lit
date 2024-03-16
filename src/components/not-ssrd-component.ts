@@ -1,17 +1,19 @@
 import { css, html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import '@material/web/button/tonal-button.js';
+import '@material/web/button/filled-tonal-button.js';
 
-// mwc-button is unfortunately not SSR-able so this is an example on how
-// to use a component that is not SSR-able.
+// md-filled-tonal-button is SSR-able, but this is an example on how
+// to use a component that you do not want to run through SSR.
 
 @customElement('not-ssrd-component')
 export class NotSsrdComponent extends LitElement {
-  @property({type: Number}) count = 0;
+  @property({ type: Number }) count = 0;
 
   render() {
     return html`
-      <md-tonal-button @click=${() => this.count++}>Increment</md-tonal-button>
+      <md-filled-tonal-button @click=${() => this.count++}
+        >Increment</md-filled-tonal-button
+      >
       <div>Count: ${this.count}</div>
     `;
   }
@@ -19,9 +21,6 @@ export class NotSsrdComponent extends LitElement {
   static styles = css`
     :host {
       display: block;
-    }
-
-    md-tonal-button {
       --md-sys-color-secondary-container: var(--secondary-container);
       --md-sys-color-on-secondary-container: var(--on-secondary-container);
     }
